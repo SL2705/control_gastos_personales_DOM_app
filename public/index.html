@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Gastos Personales</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1> Control de Gastos Personales</h1>
+        </header>
+        <main>
+            <section id="seccion-usuario">
+                <h2>Datos del Usuario</h2>
+                <form id="form-usuario">
+                    <div class="grupo-campo">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="fecha-inicio">Fecha y Hora:</label>
+                        <input type="datetime-local" id="fecha-inicio" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="saldo-inicial">Saldo Inicial:</label>
+                        <input type="number" id="saldo-inicial" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn-primario">Iniciar Control</button>
+                </form>
+                <div id="info-usuario" class="hidden">
+                    <p><strong>Usuario:</strong> <span id="usuario-nombre"></span></p>
+                    <p><strong>Inicio:</strong> <span id="usuario-fecha"></span></p>
+                    <p><strong>Saldo Inicial:</strong> $<span id="usuario-saldo-inicial"></span></p>
+                    <p><strong>Saldo Actual:</strong> $<span id="usuario-saldo-actual"></span></p>
+                </div>
+            </section>
+            <section id="seccion-gastos">
+                <h2>Registro de Gastos</h2>
+                <form id="form-gasto">
+                    <div class="grupo-campo">
+                        <label for="concepto">Concepto:</label>
+                        <input type="text" id="concepto" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="monto">Monto:</label>
+                        <input type="number" id="monto" step="0.01" required>
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="categoria">Categoría:</label>
+                        <select id="categoria" required>
+                            <option value="Alimentación">Alimentación</option>
+                            <option value="Transporte">Transporte</option>
+                            <option value="Entretenimiento">Entretenimiento</option>
+                            <option value="Salud">Salud</option>
+                            <option value="Educación">Educación</option>
+                            <option value="Hogar">Hogar</option>
+                            <option value="Otros">Otros</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primario">Registrar Gasto</button>
+                </form>
+                <div id="mensaje" class="hidden"></div>
+                <div id="tabla-container">
+                    <table id="tabla-gastos">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Concepto</th>
+                                <th>Categoría</th>
+                                <th>Monto</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-tabla"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>© 2026 Control de Gastos Personales - Victorino Triana Leonardo Antonio</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

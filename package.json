@@ -1,0 +1,17 @@
+{
+  "name": "control-gastos-app",
+  "version": "1.0.0",
+  "description": "Aplicación de control de gastos personales",
+  "main": "servidor.js",
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "start": "node servidor.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.22.2"
+  }
+}
